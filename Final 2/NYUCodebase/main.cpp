@@ -171,6 +171,7 @@ struct SheetSprite{
         glBindTexture(GL_TEXTURE_2D, textureID);
         GLfloat texCoords[] = {u, v+height, u+width, v, u, v, u+width, v, u, v+height, u+width, v+height};
         float aspect = width/height;
+        glm::mat4 modelMatrix = glm::mat4(1.0f);
         modelMatrix = glm::translate(modelMatrix, glm::vec3(x, y, 1.0f));
         program.SetModelMatrix(modelMatrix);
         float vertices[] = {-0.5f * size * aspect, -0.5f * size,
@@ -238,10 +239,7 @@ struct Entity{
         }
         return false;
     }
-    
-    int getID() const{
-        return textureID;
-    }
+
     
     vec2 position;
     SheetSprite sprite;
@@ -317,19 +315,21 @@ public:
     
         const Uint8 *keys = SDL_GetKeyboardState(NULL);
         if(keys[SDL_SCANCODE_LEFT]) {
-            user[0].velocity.x = -.3;
+            user[0].velocity.x = -.1;
         } else if(keys[SDL_SCANCODE_RIGHT]) {
-            user[0].velocity.x = .3;
+            user[0].velocity.x = .1;
         }
-        else{
-            user[0].velocity.x = 0;
-        }
+//        else{
+//            user[0].velocity.x = 0;
+//        }
         user[0].update(elapsed);
     }
     void Render(){
+        glClear(GL_COLOR_BUFFER_BIT);
         backdrop.run();
         //drawplayer
         user[0].Draw(texturedShader);
+        //draw entities
     }
 };
 
@@ -387,6 +387,8 @@ int main(int argc, char *argv[])
     //float x, float y, float velocity_x, float velocity_y, float width, float height , float r =1, float g =1, float b =1, float u = 0, float v = 0, int textureID = 0, float size = 0)
     Entity player = Entity(0.0f, 0.0f, 0.0f, 0.0f, spaceship.width,spaceship.height, 1,1,1, spaceship.u ,spaceship.v, spaceship.textureID,0.2f);
     user.push_back(player);
+    
+    
     while (!done) {
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT || event.type == SDL_WINDOWEVENT_CLOSE) {
