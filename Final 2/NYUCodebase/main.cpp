@@ -314,7 +314,7 @@ public:
         // need to include space as an event to shoot bullets
         }
     }
-    void Update(int elapased){
+    void Update(float elapsed){
         //update player
         glClear(GL_COLOR_BUFFER_BIT);
     
@@ -399,6 +399,13 @@ int main(int argc, char *argv[])
             if (event.type == SDL_QUIT || event.type == SDL_WINDOWEVENT_CLOSE) {
                 done = true;
             }
+            //if key is pressed down
+            if(event.type == SDL_KEYDOWN) {
+                if(event.key.keysym.scancode == SDL_SCANCODE_SPACE) {
+                    mode = STATE_GAME_LEVEL;
+                }
+            }
+        }
             lastFrameTicks = ticks;
             
             elapsed += accumulator;
@@ -411,13 +418,12 @@ int main(int argc, char *argv[])
                 elapsed -= FIXED_TIMESTEP;
             }
             accumulator = elapsed;
-
-            ProcessEvents();
-            Update();
+        
+            //ProcessEvents();
+            //Update();
             Render();
             SDL_GL_SwapWindow(displayWindow);
         }
-    }
     SDL_Quit();
     return 0;
 }
