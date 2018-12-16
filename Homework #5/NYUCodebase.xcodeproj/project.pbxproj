@@ -20,6 +20,9 @@
 		6DEF23C11B96CC2600BCE792 /* fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF23BB1B96CC2600BCE792 /* fragment.glsl */; };
 		6DEF23C31B96CC2600BCE792 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DEF23BE1B96CC2600BCE792 /* ShaderProgram.cpp */; };
 		6DEF23C41B96CC2600BCE792 /* vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 6DEF23C01B96CC2600BCE792 /* vertex.glsl */; };
+		9001516921C5ED150019B247 /* starry_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9001516821C5ED150019B247 /* starry_background.png */; };
+		9001516B21C5ED660019B247 /* sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 9001516A21C5ED660019B247 /* sheet.png */; };
+		9001516D21C5EDA20019B247 /* pixel_font.png in Resources */ = {isa = PBXBuildFile; fileRef = 9001516C21C5EDA20019B247 /* pixel_font.png */; };
 		903C6C7F219D15D80002A33F /* 03 Space Love Attack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 903C6C7E219D15D80002A33F /* 03 Space Love Attack.mp3 */; };
 		903C6C81219D15E20002A33F /* left_win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 903C6C80219D15E20002A33F /* left_win.wav */; };
 		903C6C83219D15EE0002A33F /* right_win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 903C6C82219D15EE0002A33F /* right_win.wav */; };
@@ -46,6 +49,9 @@
 		6DEF23BE1B96CC2600BCE792 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderProgram.cpp; sourceTree = "<group>"; };
 		6DEF23BF1B96CC2600BCE792 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
 		6DEF23C01B96CC2600BCE792 /* vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
+		9001516821C5ED150019B247 /* starry_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = starry_background.png; path = ../../../../../Desktop/starry_background.png; sourceTree = "<group>"; };
+		9001516A21C5ED660019B247 /* sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sheet.png; path = ../../../../../Desktop/sheet.png; sourceTree = "<group>"; };
+		9001516C21C5EDA20019B247 /* pixel_font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pixel_font.png; path = ../../../../../Desktop/pixel_font.png; sourceTree = "<group>"; };
 		903C6C7E219D15D80002A33F /* 03 Space Love Attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "03 Space Love Attack.mp3"; sourceTree = "<group>"; };
 		903C6C80219D15E20002A33F /* left_win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = left_win.wav; sourceTree = "<group>"; };
 		903C6C82219D15EE0002A33F /* right_win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = right_win.wav; sourceTree = "<group>"; };
@@ -133,7 +139,10 @@
 			children = (
 				903C6C82219D15EE0002A33F /* right_win.wav */,
 				903C6C80219D15E20002A33F /* left_win.wav */,
+				9001516821C5ED150019B247 /* starry_background.png */,
 				903C6C7E219D15D80002A33F /* 03 Space Love Attack.mp3 */,
+				9001516C21C5EDA20019B247 /* pixel_font.png */,
+				9001516A21C5ED660019B247 /* sheet.png */,
 				6DEF23BB1B96CC2600BCE792 /* fragment.glsl */,
 				6DE9D2F01BA6AB8C002D599C /* fragment_textured.glsl */,
 				6DC707691BA7273500225B7D /* vertex_textured.glsl */,
@@ -199,6 +208,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D5A86B819AE5C710066C1FD /* InfoPlist.strings in Resources */,
+				9001516B21C5ED660019B247 /* sheet.png in Resources */,
+				9001516921C5ED150019B247 /* starry_background.png in Resources */,
 				6DEF23C11B96CC2600BCE792 /* fragment.glsl in Resources */,
 				6DE9D2F11BA6AB8C002D599C /* fragment_textured.glsl in Resources */,
 				903C6C81219D15E20002A33F /* left_win.wav in Resources */,
@@ -206,6 +217,7 @@
 				903C6C83219D15EE0002A33F /* right_win.wav in Resources */,
 				6D5A86BE19AE5C710066C1FD /* Credits.rtf in Resources */,
 				6DEF23C41B96CC2600BCE792 /* vertex.glsl in Resources */,
+				9001516D21C5EDA20019B247 /* pixel_font.png in Resources */,
 				6DC7076A1BA7273500225B7D /* vertex_textured.glsl in Resources */,
 				903C6C7F219D15D80002A33F /* 03 Space Love Attack.mp3 in Resources */,
 			);
