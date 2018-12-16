@@ -40,11 +40,13 @@ GLuint fontTexture;
 GLuint background;
 GLuint sheetSpriteTexture;
 bool done = false;
+//time variables
 float lastFrameTicks = 0.0f;
-float elapsed = 0.0f;
 float accumulator = 0.0f;
-int sprite_count_x = 16;
-int sprite_count_y = 8;
+float ticks = (float)SDL_GetTicks()/1000.0f;
+float elapsed = ticks - lastFrameTicks;
+//int sprite_count_x = 16;
+//int sprite_count_y = 8;
 
 
 SDL_Window* displayWindow;
@@ -315,13 +317,13 @@ public:
     
         const Uint8 *keys = SDL_GetKeyboardState(NULL);
         if(keys[SDL_SCANCODE_LEFT]) {
-            user[0].velocity.x = -.1;
+            user[0].velocity.x = -3.0;
         } else if(keys[SDL_SCANCODE_RIGHT]) {
-            user[0].velocity.x = .1;
+            user[0].velocity.x = 3.0;
         }
-//        else{
-//            user[0].velocity.x = 0;
-//        }
+        else{
+            user[0].velocity.x = 0;
+        }
         user[0].update(elapsed);
     }
     void Render(){
@@ -394,13 +396,13 @@ int main(int argc, char *argv[])
             if (event.type == SDL_QUIT || event.type == SDL_WINDOWEVENT_CLOSE) {
                 done = true;
             }
-            float ticks = (float)SDL_GetTicks()/1000.0f;
-            elapsed = ticks - lastFrameTicks;
             lastFrameTicks = ticks;
+            
             elapsed += accumulator;
             if(elapsed < FIXED_TIMESTEP) {
                 accumulator = elapsed;
-                continue; }
+                continue;
+            }
             while(elapsed >= FIXED_TIMESTEP) {
                 Update(FIXED_TIMESTEP);
                 elapsed -= FIXED_TIMESTEP;
