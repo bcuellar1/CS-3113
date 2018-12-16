@@ -40,11 +40,10 @@ GLuint fontTexture;
 GLuint background;
 GLuint sheetSpriteTexture;
 bool done = false;
-//time variables
-float lastFrameTicks = 0.0f;
-float accumulator = 0.0f;
-float ticks = (float)SDL_GetTicks()/1000.0f;
-float elapsed = ticks - lastFrameTicks;
+float lastFrameTicks;
+float ticks;
+float elapsed;
+float accumulator;
 //int sprite_count_x = 16;
 //int sprite_count_y = 8;
 
@@ -297,6 +296,10 @@ public:
         fontTexture = LoadTexture(RESOURCE_FOLDER"pixel_font.png");
         background = LoadTexture(RESOURCE_FOLDER"starry_background.png");
         sheetSpriteTexture = LoadTexture(RESOURCE_FOLDER"sheet.png");
+        lastFrameTicks = 0.0f;
+        accumulator = 0.0f;
+        ticks = (float)SDL_GetTicks()/1000.0f;
+        elapsed = ticks - lastFrameTicks;
     }
     void ProcessEvents(){
         const Uint8 *keys = SDL_GetKeyboardState(NULL);
