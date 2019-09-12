@@ -1,0 +1,5 @@
+Hi! 
+
+This was a project I had for my intro to game programming class. In order to get this code up and running is a fairly difficult process.
+There are a lot of different frameworks and parts that need to be in your directory, but running it in xcode should work immediately.
+This game was modeled off of "Galaga," actual code to be seen is in main.cpp. 
